@@ -1,0 +1,56 @@
+.title-container {
+    position: relative;
+}
+
+.title {
+    color: #445626;
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.title-icon {
+    position: absolute;
+    width: 50px;
+    top: 10px;
+    left: -75px;
+}
+
+@media screen and (max-width: 991px) {
+    .title {
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    .title-icon {
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .title-icon {
+        width: 40px;
+        left: -50px;
+        top: 5px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    .title-icon {
+        width: 35px;
+        left: -40px;
+        top: 5px;
+    }
+}

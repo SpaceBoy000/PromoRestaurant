@@ -1,0 +1,483 @@
+.section {
+    padding: 80px 0;
+}
+
+.home-container {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.app-logo {
+    width: 360px;
+    margin: 0 auto 30px;
+}
+
+.home-caption {
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+
+.home-sub-caption {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.home-banner-title {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.home-banner-subtitle {
+    font-family: Gabelisa, serif;
+    font-size: 130px;
+    line-height: 0.85;
+}
+
+.section-container {
+    padding: 80px 40px 40px;
+}
+
+.section-content {
+    color: #445626;
+    font-size: 22px;
+    line-height: 2;
+    letter-spacing: 0.09375rem;
+}
+
+.mission-leaf {
+    position: relative;
+    right: -75px;
+    float: right;
+    width: 40%;
+    shape-outside: url('../../assets/images/MissionLeaf.png');
+}
+
+.mission-growth {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.mission-growth span {
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    vertical-align: center;
+}
+
+.mission-growth .ampersand {
+    font-family: Gabelisa, serif;
+    font-size: 113px;
+    line-height: 1;
+    vertical-align: center;
+}
+
+.mission-growing {
+    font-family: 'Gabelisa', serif;
+    font-size: 118px;
+    letter-spacing: 0;
+}
+
+.mission-extend {
+    font-size: 30px;
+    letter-spacing: 0.08em;
+    margin-bottom: 80px;
+}
+
+.find-button {
+    display: inline-block;
+    background-color: white;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+}
+
+.about-banner {
+    position: relative;
+    box-shadow: 0 6px 9px 0 rgba(94, 94, 94, 0.6);
+}
+
+.about-banner-leaf {
+    position: absolute;
+    bottom: -140px;
+    height: 140px;
+    right: 12%;
+}
+
+.inline-divider {
+    height: 60px;
+}
+
+.diversity-leaf {
+    position: relative;
+    left: -75px;
+    float: left;
+    width: 50%;
+    shape-outside: url('../../assets/images/DiversityLeaf.png');
+}
+
+.contact-banner {
+    position: relative;
+    box-shadow: 0 6px 9px 0 rgba(94, 94, 94, 0.6);
+}
+
+.contact-banner-leaf {
+    position: absolute;
+    bottom: -150px;
+    height: 320px;
+    right: 0;
+}
+
+.contact-wrapper {
+    display: flex;
+}
+
+.contact-form {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.contact-map {
+    width: 400px;
+}
+
+.contact-map img {
+    max-width: 100%;
+}
+
+.form-input {
+    margin-bottom: 20px;
+    background: white;
+}
+
+.form-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border: 0;
+}
+
+.form-input input, .form-input textarea {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.submit-button {
+    display: inline-block;
+    position: relative;
+    margin-top: 40px;
+}
+
+.submit-button img {
+    width: 180px;
+}
+
+.submit-button-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+@media screen and (max-width: 991px) {
+    .app-logo {
+        width: 250px;
+    }
+
+    .home-container {
+        padding-bottom: 60px;
+    }
+
+    .home-caption {
+        margin-top: 60px;
+        font-size: 40px
+    }
+
+    .home-sub-caption {
+        font-size: 18px;
+    }
+
+    .home-banner-title {
+        font-size: 24px;
+    }
+
+    .home-banner-subtitle {
+        font-size: 100px;
+    }
+
+    .section-container {
+        padding-top: 60px;
+    }
+
+    .section-content {
+        font-size: 18px;
+    }
+
+    .mission-leaf {
+        width: 50%;
+    }
+
+    .mission-growth span {
+        font-size: 32px;
+    }
+
+    .mission-growth .ampersand {
+        font-size: 90px;
+    }
+
+    .mission-growing {
+        font-size: 95px;
+    }
+
+    .mission-extend {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+
+    .find-button {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    .about-banner-leaf {
+        height: 110px;
+        bottom: -110px;
+    }
+
+    .diversity-leaf {
+        width: 45%;
+    }
+
+    .contact-banner-leaf {
+        height: 250px;
+        bottom: -110px
+    }
+
+    .contact-map {
+        width: 50%;
+    }
+
+    .form-input input, .form-input textarea {
+        font-size: 14px;
+    }
+
+    .submit-button img {
+        width: 140px;
+    }
+
+    .submit-button-text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .app-logo {
+        width: 220px;
+    }
+
+    .home-container {
+        padding-bottom: 50px;
+    }
+
+    .home-caption {
+        margin-top: 50px;
+        font-size: 26px;
+    }
+
+    .home-sub-caption {
+        font-size: 14px;
+    }
+
+    .home-banner-title {
+        font-size: 16px;
+    }
+
+    .home-banner-subtitle {
+        font-size: 70px;
+    }
+
+    .section-container {
+        padding: 40px 25px 30px;
+    }
+
+    .section-content {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .mission-leaf {
+        width: 40%;
+        right: -30px;
+    }
+
+    .mission-growth span {
+        font-size: 22px;
+    }
+
+    .mission-growth .ampersand {
+        font-size: 60px;
+    }
+
+    .mission-growing {
+        font-size: 60px;
+    }
+
+    .mission-extend {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .find-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .about-banner-leaf {
+        height: 80px;
+        bottom: -80px;
+    }
+
+    .diversity-leaf {
+        width: 45%;
+        left: -30px;
+    }
+
+    .contact-banner-leaf {
+        height: 150px;
+        bottom: -60px
+    }
+
+    .contact-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .contact-map {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .contact-map img {
+        margin: auto;
+    }
+
+    .contact-form {
+        margin-right: 0;
+    }
+
+    .form-input input, .form-input textarea {
+        font-size: 12px;
+    }
+
+    .submit-button img {
+        width: 120px;
+    }
+
+    .submit-button-text {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .app-logo {
+        width: 200px;
+    }
+
+    .home-container {
+        padding-bottom: 40px;
+    }
+
+    .home-caption {
+        font-size: 18px;
+    }
+
+    .home-sub-caption {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .home-banner-title {
+        font-size: 10px;
+    }
+
+    .home-banner-subtitle {
+        font-size: 45px;
+    }
+
+    .section-container {
+        padding: 30px 15px 25px;
+    }
+
+    .section-content {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .mission-leaf {
+        width: 40%;
+        right: -35px;
+    }
+
+    .mission-growth span {
+        font-size: 18px;
+    }
+
+    .mission-growth .ampersand {
+        font-size: 45px;
+    }
+
+    .mission-growing {
+        font-size: 45px;
+    }
+
+    .mission-extend {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .find-button {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .about-banner-leaf {
+        height: 60px;
+        bottom: -60px;
+    }
+
+    .diversity-leaf {
+        width: 45%;
+        left: -35px;
+    }
+
+    .contact-banner-leaf {
+        height: 100px;
+        bottom: -50px
+    }
+
+    .submit-button img {
+        width: 100px;
+    }
+
+    .submit-button-text {
+        font-size: 12px;
+    }
+}
