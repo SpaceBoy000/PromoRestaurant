@@ -69,9 +69,10 @@ const Home = () => {
     <>
       <Header />
       <section id='home'>
+          {/* <img src={Logo} alt='logo' className='app-logo' />
+          {!isMobile && <Navigator />} */}
         <div className="container home-container">
-          <img src={Logo} alt='logo' className='app-logo' />
-          {!isMobile && <Navigator />}
+          
           <p className="home-caption">
             <span className="text-primary">Bringing Joy of </span>
             <span className="text-secondary">Food</span>
@@ -118,7 +119,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='about'>
+      {/* <section id='about'>
         <div className="about-banner">
           <img src={AboutBanner} alt='' className="banner-image" />
           <img src={BannerLeaf} alt='leaf' className="about-banner-leaf" />
@@ -221,7 +222,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
