@@ -16,9 +16,9 @@ import Brand from '../../assets/images/brand.png';
 
 const NavItem = ({ to, title, handleClick }) => {
   const location = useLocation();
-  console.log("Link: ", to);
+  // console.log("Link: ", to, location,hash);
   return (
-    <div className={clsx('drawer-nav-item', { active: location.hash === to })} onClick={handleClick}>
+    <div className={clsx('drawer-nav-item', { active: location.pathname.includes(to) })} onClick={handleClick}>
       {/* <HashLink to={to} className='nav-text'>{title}</HashLink> */}
       <Link to={to} className='nav-text'>{title}</Link>
     </div>
