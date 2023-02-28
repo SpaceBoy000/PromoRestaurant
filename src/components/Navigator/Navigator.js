@@ -5,7 +5,6 @@ import './Navigator.css';
 
 const Navigator = () => {
   const location = useLocation();
-  console.log("Header Location: ", location);
   return (
     <div className="navigator-container">
       <Link to='/home' className={clsx('nav-item', { active: location.pathname.includes('home') })}>Home</Link>
