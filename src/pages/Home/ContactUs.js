@@ -8,11 +8,11 @@ import Divider from '../../components/Divider/Divider';
 import ImageCard from '../../components/ImageCard/ImageCard';
 import './Home.css';
 
-import Logo from '../../assets/images/logo.png';
-import GreenMap from '../../assets/images/GreenMap.png';
-import MissionLeaf from '../../assets/images/MissionLeaf.png';
-import AboutBanner from '../../assets/images/AboutBanner.png';
-import BannerLeaf from '../../assets/images/BannerLeaf.png';
+// import Logo from '../../assets/images/logo.png';
+// import GreenMap from '../../assets/images/GreenMap.png';
+// import MissionLeaf from '../../assets/images/MissionLeaf.png';
+// import AboutBanner from '../../assets/images/AboutBanner.png';
+// import BannerLeaf from '../../assets/images/BannerLeaf.png';
 import Card11 from '../../assets/images/Card1-1.png';
 import Card12 from '../../assets/images/Card1-2.png';
 import Card13 from '../../assets/images/Card1-3.png';
@@ -22,10 +22,20 @@ import Card23 from '../../assets/images/Card2-3.png';
 import DiversityLeaf from '../../assets/images/DiversityLeaf.png';
 import ContactBanner from '../../assets/images/ContactBanner.png';
 import ContactLeaf from '../../assets/images/ContactLeaf.png';
-import GoogleMap from '../../assets/images/map.png';
+// import GoogleMap from '../../assets/images/map.png';
 import Submit from '../../assets/images/Submit.png';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import Map from '../../components/GoogleMap/map';
+
+
+import {
+  withGoogleMap,
+  GoogleMap,
+  withScriptjs,
+  InfoWindow,
+  Marker
+} from "react-google-maps";
 
 const businessCardData = [
   {
@@ -63,6 +73,18 @@ const investorCardData = [
   },
 ]
 
+const MyMapComponent = withScriptjs(
+  withGoogleMap((props) => {
+    return (
+      <GoogleMap
+        defaultZoom={14}
+        defaultCenter={{ lat: 60.2517722, lng: 24.8989093 }}
+      >
+        <Marker position={{ lat: 60.2517722, lng: 24.8989093 }} />
+      </GoogleMap>
+    );
+  })
+);
 
 const ContactUs = () => {
   const isMobile = useMediaQuery('(max-width: 991px)');
@@ -76,7 +98,7 @@ const ContactUs = () => {
   })
 
   useEffect(() => {
-    if(status === 'SUCCESS') {
+    if (status === 'SUCCESS') {
       setTimeout(() => {
         setStatus('');
       }, 3000);
@@ -84,7 +106,7 @@ const ContactUs = () => {
   }, [status]);
 
   const handleChange = (e) => {
-    
+
     setValues(values => ({
       ...values,
       [e.target.name]: e.target.value
@@ -110,10 +132,15 @@ const ContactUs = () => {
       });
   }
 
+  const mapStyles = {
+    width: '100%',
+    height: '100%',
+  };
+
   return (
     <>
       <Header />
-      
+
       <section id='contact'>
         <div className="contact-banner">
           <img src={ContactBanner} alt='' className="banner-image" />
@@ -126,7 +153,7 @@ const ContactUs = () => {
           <div className="contact-wrapper">
             <form onSubmit={handleSubmit}>
               <div className="contact-form">
-                <TextField 
+                <TextField
                   fullWidth
                   placeholder='NAME'
                   className="form-input"
@@ -167,7 +194,20 @@ const ContactUs = () => {
               </div>
             </form>
             <div className="contact-map">
-              <img src={GoogleMap} alt='map' />
+              {/* <img src={GoogleMap} alt='map' /> */}
+              {/* <Map
+                google={undefined}
+                center={{ lat: 40.7484, lng: -73.9857 }}
+                height="300px"
+                zoom={15}
+              /> */}
+
+                <MyMapComponent
+                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1eL5WysMmFb7if7R2HmUUC5PPva7vkvo&v=3.exp&libraries=geometry,drawing,places"
+                    loadingElement={<div style={{ height: `100%` }} />}
+                    containerElement={<div style={{ height: `100vh` }} />}
+                    mapElement={<div style={{ height: `100%` }} />}
+                />
             </div>
           </div>
         </div>
