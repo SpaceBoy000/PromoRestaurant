@@ -26,8 +26,11 @@ import ContactLeaf from '../../assets/images/ContactLeaf.png';
 import Submit from '../../assets/images/Submit.png';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-import Map from '../../components/GoogleMap/map';
+// import Map from '../../components/GoogleMap/map';
+import mapStyles from './mapStyles'
+// import * as parkData from "./data/parkData.json";
 
+import Map from "../../components/GoogleMap/map";
 
 import {
   withGoogleMap,
@@ -73,18 +76,71 @@ const investorCardData = [
   },
 ]
 
-const MyMapComponent = withScriptjs(
-  withGoogleMap((props) => {
-    return (
-      <GoogleMap
-        defaultZoom={14}
-        defaultCenter={{ lat: 60.2517722, lng: 24.8989093 }}
-      >
-        <Marker position={{ lat: 60.2517722, lng: 24.8989093 }} />
-      </GoogleMap>
-    );
-  })
-);
+// function Map() {
+//   const [selectedPark, setSelectedPark] = useState(null);
+
+//   useEffect(() => {
+//     const listener = e => {
+//       if (e.key === "Escape") {
+//         setSelectedPark(null);
+//       }
+//     };
+//     window.addEventListener("keydown", listener);
+
+//     return () => {
+//       window.removeEventListener("keydown", listener);
+//     };
+//   }, []);
+
+
+//   return (
+//     <GoogleMap
+//       defaultZoom={19}
+//       defaultCenter={{ lat: 43.6561, lng: -79.3802}}
+//       options={{ styles: mapStyles }}
+//     >
+//       {/* {parkData.features.map(park => (
+//         <Marker
+//           key={park.properties.PARK_ID}
+//           position={{
+//             lat: park.geometry.coordinates[1],
+//             lng: park.geometry.coordinates[0]
+//           }}
+//           onClick={() => {
+//             setSelectedPark(park);
+//           }}
+//           icon={{
+//             url:  "https://img.icons8.com/color/48/000000/map-pin.png",
+//             scaledSize: new window.google.maps.Size(50, 50)
+//           }}
+//         />
+//       ))}
+
+//       {selectedPark && (
+//         <InfoWindow
+//           onCloseClick={() => {
+//             setSelectedPark(null);
+//           }}
+//           position={{
+//             lat: selectedPark.geometry.coordinates[1],
+//             lng: selectedPark.geometry.coordinates[0]
+//           }}
+//         >
+//           <div>
+//             <h2>{selectedPark.properties.NAME}</h2>
+//             <p>{selectedPark.properties.DESCRIPTIO}</p>
+//           </div>
+//         </InfoWindow>
+//       )} */}
+//     </GoogleMap>
+    
+//   );
+// }
+
+// const MyMapComponent = withScriptjs(
+//   withGoogleMap(Map)
+// );
+
 
 const ContactUs = () => {
   const isMobile = useMediaQuery('(max-width: 991px)');
@@ -136,7 +192,9 @@ const ContactUs = () => {
     width: '100%',
     height: '100%',
   };
-
+  
+  let url = "https://maps.googleapis.com/maps/api/js?key=" + process.env.REACT_APP_GOOGLE_MAPS_API_KEY + "&v=3.exp&libraries=geometry,drawing,places";
+  
   return (
     <>
       <Header />
@@ -151,8 +209,8 @@ const ContactUs = () => {
         <div className="container section-container">
           <SectionTitle title='Contact Us' />
           <div className="contact-wrapper">
-            <form onSubmit={handleSubmit}>
               <div className="contact-form">
+                <form onSubmit={handleSubmit}>
                 <TextField
                   fullWidth
                   placeholder='NAME'
@@ -191,9 +249,10 @@ const ContactUs = () => {
                   <img src={Submit} alt='submit' />
                   <p className="submit-button-text">Submit</p>
                 </button>
+              </form>
               </div>
-            </form>
             <div className="contact-map">
+              <Map/>
               {/* <img src={GoogleMap} alt='map' /> */}
               {/* <Map
                 google={undefined}
@@ -201,13 +260,13 @@ const ContactUs = () => {
                 height="300px"
                 zoom={15}
               /> */}
-
-                <MyMapComponent
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1eL5WysMmFb7if7R2HmUUC5PPva7vkvo&v=3.exp&libraries=geometry,drawing,places"
+                
+                {/* <MyMapComponent
+                    googleMapURL={url}
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `100vh` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
-                />
+                /> */}
             </div>
           </div>
         </div>

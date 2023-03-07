@@ -146,10 +146,11 @@
 .contact-form {
     flex: 1;
     margin-right: 30px;
+    width: 40%;
 }
 
 .contact-map {
-    width: 400px;
+    width: 55%;
 }
 
 .contact-map img {
@@ -279,7 +280,7 @@
     }
 
     .contact-map {
-        width: 50%;
+        width: 100%;
     }
 
     .form-input input, .form-input textarea {
@@ -387,6 +388,7 @@
 
     .contact-form {
         margin-right: 0;
+        width: 100%;
     }
 
     .form-input input, .form-input textarea {
